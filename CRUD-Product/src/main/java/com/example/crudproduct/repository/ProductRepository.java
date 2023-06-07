@@ -4,6 +4,6 @@ import com.example.crudproduct.entity.Product;
 
 import java.util.List;
 
-public interface ProductRepository {
+public interface ProductRepository<Product> {
     List<Product> getAll();
 }
