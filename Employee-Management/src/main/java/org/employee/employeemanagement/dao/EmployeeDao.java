@@ -46,10 +46,14 @@ public class EmployeeDao {
 
     public void addEmp(Employee employee) {
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
-             PreparedStatement pstmt = conn.prepareStatement("INSERT INTO users (name, email, country) VALUES (?, ?, ?)")) {
-
-
+             PreparedStatement pstmt = conn.prepareStatement("INSERT INTO employee (name, address, birthDay, position, department) VALUES (?, ?, ?, ?, ?)")) {
+            pstmt.setString(1, employee.getName());
+            pstmt.setString(2, employee.getAddress());
+            pstmt.setString(3, employee.getBirthDay());
+            pstmt.setString(4, employee.getPosition());
+            pstmt.setString(5, employee.getDepartment());
             pstmt.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

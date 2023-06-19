@@ -35,10 +35,10 @@ public class EmployeeController extends HttpServlet {
 
         try {
             switch (action) {
-//                case "/new":
-//                    showNewForm(request, response);
-//                    break;
-                case "":
+                case "/add":
+                    showFormAdd(request, response);
+                    break;
+                case "/":
                     listEmployee(request, response);
                     break;
                 default:
@@ -56,6 +56,23 @@ public class EmployeeController extends HttpServlet {
         request.setAttribute("employeeList", employeeList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("list-employees.jsp");
         dispatcher.forward(request, response);
+    }
+    private void showFormAdd(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("add-employee.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    private void addEmp(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException {
+        String name = request.getParameter("name");
+        String address = request.getParameter("address");
+        String birthDay = request.getParameter("birthDay");
+        String position = request.getParameter("position");
+        String department = request.getParameter("department");
+        Employee newEmployee = new Employee(name, address, birthDay, position,department);
+        employeeDao.addEmp(newEmployee);
+        response.sendRedirect("/");
     }
 
 }
