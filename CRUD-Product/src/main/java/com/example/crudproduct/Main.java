@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        ProductRepositoryImp productRepositoryImp = new ProductRepositoryImp(Product.class);
-        List<Product> productList = productRepositoryImp.findall();
-        System.err.println(productList);
+//        ProductRepositoryImp productRepositoryImp = new ProductRepositoryImp(Product.class);
+//        List<Product> productList = productRepositoryImp.findall();
+//        System.err.println(productList);
     }
 }

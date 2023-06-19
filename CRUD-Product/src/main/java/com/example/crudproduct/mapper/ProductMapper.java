@@ -11,6 +11,4 @@ public interface ProductMapper {
     // 2 function : convert dto -> entity, entity -> dto
     Product dtoEntity(ProductDto productDto);
     ProductDto entityDto(Product product);
-    List<ProductDto> entityToDto(List<Product> product);
-    List<Product> entityToEntity(List<ProductDto> productDto);
 }
