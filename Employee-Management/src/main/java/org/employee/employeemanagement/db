@@ -1,7 +1,7 @@
 create table employee(
 	id int AUTO_INCREMENT,
-	name varchar(20),
-    birthDay date,
+	name varchar(200),
+    birthDay varchar(50),
     address varchar(300),
     position varchar(50),
     department varchar(150),
