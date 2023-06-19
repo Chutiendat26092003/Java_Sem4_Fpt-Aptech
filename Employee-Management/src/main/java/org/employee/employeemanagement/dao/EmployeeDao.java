@@ -48,9 +48,6 @@ public class EmployeeDao {
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement("INSERT INTO users (name, email, country) VALUES (?, ?, ?)")) {
 
-//            pstmt.setString(1, user.getName());
-//            pstmt.setString(2, user.getEmail());
-//            pstmt.setString(3, user.getCountry());
 
             pstmt.executeUpdate();
         } catch (SQLException e) {

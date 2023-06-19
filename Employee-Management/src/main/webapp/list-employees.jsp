@@ -39,7 +39,7 @@
                 <td>${item.department}</td>
                 <td>
                     <ul class="flex gap-[20px] items-center">
-                        <li><button><a href="/jpa_sem4_war_exploded/product?id=${item.id}">Details</a></button></li>
+                        <li><button><a href="#">Details</a></button></li>
                         <li><button><a href="#">Edit</a></button></li>
                         <li><button><a href="#">Delete</a></button></li>
                     </ul>
